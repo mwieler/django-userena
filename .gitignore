@@ -34,3 +34,6 @@ demo/media/admin
 
 # Temp vim files
 *.swp
+
+# added by MEW
+.DS_Store

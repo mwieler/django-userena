@@ -39,6 +39,7 @@ class SignupForm(forms.Form):
     password2 = forms.CharField(widget=forms.PasswordInput(attrs=attrs_dict,
                                                            render_value=False),
                                 label=_("Repeat password"))
+    teamname = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=75)))
 
     def clean_username(self):
         """
