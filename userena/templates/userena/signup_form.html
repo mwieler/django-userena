@@ -1,13 +1,13 @@
 {% extends 'userena/base_userena.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Signup" %}{% endblock %}
+{% block title %}{% trans "PSignup" %}{% endblock %}
 
 {% block content %}
 <form action="" method="post">
   {% csrf_token %}
   <fieldset>
-    <legend>{% trans "Signup" %}</legend>
+    <legend>{% trans "PSignup" %}</legend>
     {{ form.non_field_errors }}
     {% for field in form %}
     {{ field.errors }}
