@@ -39,7 +39,20 @@ class SignupForm(forms.Form):
     password2 = forms.CharField(widget=forms.PasswordInput(attrs=attrs_dict,
                                                            render_value=False),
                                 label=_("Repeat password"))
-    teamname = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=75)),label= _("Team Name"))
+    # MEW CODE #
+    first_name = forms.CharField(label=_(u'First name'),
+                                 max_length=30,
+                                 required=False)
+
+    last_name = forms.CharField(label=_(u'Last name'),
+                                max_length=30,
+                                required=False)
+
+    team_name = forms.CHarField(label=_(u'Team name'),
+                            max_length=30,
+                            required=False)
+    # END MEW CODE #
+    # teamname = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=75)),label= _("Team Name"))
 
     def clean_username(self):
         """
