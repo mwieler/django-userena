@@ -106,7 +106,8 @@ class SignupForm(forms.Form):
                                                      not userena_settings.USERENA_ACTIVATION_REQUIRED,
                                                      userena_settings.USERENA_ACTIVATION_REQUIRED,
                                                      first_name, #MW
-                                                     last_name # MW)
+                                                     last_name # MW
+                                                     )
         return new_user
 
 class SignupFormOnlyEmail(SignupForm):
