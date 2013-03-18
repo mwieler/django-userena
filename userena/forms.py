@@ -46,11 +46,11 @@ class SignupForm(forms.Form):
     last_name = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict,
                                                                maxlength=75)),
                              label=_("Last name"))
-    team_name = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict,
-                                                               maxlength=75)),
-                             label=_("Team name"))
-    # teamname = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=75)),label= _("Team Name"))
-
+    # team_name = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict,
+    #                                                            maxlength=75)),
+    #                          label=_("Team name"))
+    # # teamname = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=75)),label= _("Team Name"))
+    # END MEW CODE #
     def clean_username(self):
         """
         Validate that the username is alphanumeric and is not already in use.
@@ -92,9 +92,13 @@ class SignupForm(forms.Form):
 
     def save(self):
         """ Creates a new user and account. Returns the newly created user. """
-        username, email, password = (self.cleaned_data['username'],
+        username, email, password, first_name, last_name, team_name = (self.cleaned_data['username'],
                                      self.cleaned_data['email'],
-                                     self.cleaned_data['password1'])
+                                     self.cleaned_data['password1'],
+                                     self.cleaned_data['first_name'], # added by MW
+                                     self.cleaned_data['last_name'], # MW
+                                     #self.cleaned_data['team_name'] # MW
+                                     )
 
         new_user = UserenaSignup.objects.create_user(username,
                                                      email,
