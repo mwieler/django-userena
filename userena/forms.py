@@ -45,10 +45,10 @@ class SignupForm(forms.Form):
                              label=_("First name"))
     last_name = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict,
                                                                maxlength=75)),
-                             label=_("First name"))
+                             label=_("Last name"))
     team_name = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict,
                                                                maxlength=75)),
-                             label=_("First name"))
+                             label=_("Team name"))
     # teamname = forms.CharField(widget=forms.TextInput(attrs=dict(attrs_dict, maxlength=75)),label= _("Team Name"))
 
     def clean_username(self):
