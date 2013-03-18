@@ -104,10 +104,13 @@ class SignupForm(forms.Form):
                                                      email,
                                                      password,
                                                      not userena_settings.USERENA_ACTIVATION_REQUIRED,
-                                                     userena_settings.USERENA_ACTIVATION_REQUIRED,
-                                                     first_name, #MW
-                                                     last_name # MW
+                                                     userena_settings.USERENA_ACTIVATION_REQUIRED
                                                      )
+
+        new_user.first_name = first_name # MW
+        new_user.last_name = last_name # MW
+        new_user.save() # MW
+
         return new_user
 
 class SignupFormOnlyEmail(SignupForm):
